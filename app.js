@@ -29,5 +29,5 @@ app.use(trataLog);
 app.use('/api/produtos', rotaProduto);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${port}`) //
 })
