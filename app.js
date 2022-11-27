@@ -7,7 +7,7 @@ const port = 3000
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));//
 
 const trataLog = (req, res, next) => {
   console.log("Metodo", req.method);  
