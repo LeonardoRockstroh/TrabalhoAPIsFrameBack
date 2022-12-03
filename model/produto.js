@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 
 const ProdutoSchema = new Schema({
     nome: String,
-    preco: Number
+    cliente: String,
+    qtd: Number,
+    preco: Number,
+    valor: Number,
 },
 {
     versionKey: false

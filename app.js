@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose') 
 const cors = require('cors')
 const rotaProduto = require('./rotas/produto_rotas')
+const rotaCliente = require('./rotas/cliente_rotas')
 const app = express()
 const port = 3000
 
@@ -27,6 +28,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/app_produtos')
 app.use(trataLog);
 
 app.use('/api/produtos', rotaProduto);
+app.use('/api/cliente', rotaCliente);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`) //

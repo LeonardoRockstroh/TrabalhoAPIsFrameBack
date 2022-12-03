@@ -1,5 +1,5 @@
 const Produto = require("../model/produto");
-
+const Cliente = require("../model/cliente");
 
 exports.listar = (req, res) => {
     Produto.find({}, (err, produtos) => {
@@ -13,7 +13,10 @@ exports.listar = (req, res) => {
 exports.inserir = (req, res) => {
     const produtoRequest = req.body;
     if(produtoRequest && produtoRequest.nome && produtoRequest.preco) {
+    
+    
 
+                // Insere produto
         const produtoNovo = new Produto(produtoRequest);
         produtoNovo.save((err, produtoSalvo) => {
             if(err) {
@@ -23,13 +26,15 @@ exports.inserir = (req, res) => {
                 return res.status(201).json(produtoSalvo);
             }
         })
-        
+
     }
     else {
+        console.log('retornado 400')
         return res.status(400).json({
             Erro:"Nome e/ou preco sao obrigatorios"
         })
     }
+    
 }
 
 exports.buscarPorId = (req, res) => {
